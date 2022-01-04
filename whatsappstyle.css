@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image:linear-gradient( #009688 0%, #009688 130px, #d9dbd5 130px, #d9dbd5 100% );
+
+}
+.container{
+    position: relative;
+    width: 1396px;
+    max-width: 100%; 
+    height: calc(100vh - 50px);
+    background:  #fff;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px  5px 0  rgba(0, 0, 0, 0.06);
+    display: flex;
+}
+.container .left-div{
+    position:relative;
+    flex: 30%;
+    background:#fff;
+    border-right: 1px solid black;
+}
+.container .right-div{
+    position:relative;
+    flex: 70%;
+    background:#e5ddd5;
+}
+.container .right-div::before{
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:url(image/pattern.png );
+    opacity: 0.08;
+}
+.header{
+    position: relative;
+    width: 100%;
+    height: 60px;
+    background: #ededed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    
+}
+.user-image{
+    height: 40px;
+    width: 40px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+.nav-icons{
+    display: flex;
+
+}
+.nav-icons li {
+    display: flex;
+    list-style: none;
+    cursor: pointer;
+    color: #51585c;
+    font-size: 1.5rem;
+    margin-left: 22px;
+}
+.search-chat{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background: #f6f6f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+}
+.search-chat div{
+    width: 100%;
+    display: flex;
+
+}
+.search-chat div input{
+    width: 100%;
+    outline: none;
+    border: none;
+    background: #fff;
+    padding: 6px;
+    height: 38px;
+    border-radius: 30px;
+    font-size: 14px;
+    padding-left: 50px;
+}
+.search-chat div input:focus{
+    font-size: 20px;
+    font-weight: bold;
+    border:1px solid black;
+    
+}
+.search-chat div ion-icon{
+    position: absolute;
+    left: 30px;
+    top: 14px;
+    font-size: 1.3rem;
+}
+.chat-list{
+    position: relative;
+    height: calc( 100% - 110px); /* 60 + 50 = 110*/
+    overflow: auto;
+    
+}
+.chat-list .block{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px ;
+    border-bottom: 1px solid lightgray;
+
+}
+.chat-list .block .img-box{
+    position: relative;
+    width: 45px;
+    height: 45px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.chat-list .block .details{
+    position: relative;
+    width: 100%;
+}
+.chat-list .block .details .list-head{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+.chat-list .block .details .list-head h4{
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #111;
+}
+.chat-list .block .details .list-head .time{
+    font-size: 0.8em;
+    /* opacity: 0.8; */
+     /* color: green; */
+}
+.chat-list .block .unread .details .list-head .time{
+    color: green;
+}
+.chat-list .block:hover{
+    background: #f5f5f5;
+}
+.message-p{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.message-p p{
+    color: #aaa;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    font-size: 0.8rem;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+.message-p b{
+    background-color:green;
+    font-size: 0.75em;
+    justify-content: center;
+    align-items: center;
+    min-width: 20px;
+    height: 20px;
+    color: #fff;
+    display: flex;
+    border-radius: 50%;
+
+
+}
+.chat-list .block.active{
+    background-color: #ebebeb;
+}
+.img-text{
+    display: flex;
+    margin-left: 15px;
+}
+.header .img-text h4{
+    margin-left: 15px;
+    font-weight: bold;
+}
+.header .img-text h4 span{
+    font-size: 0.8em;
+    color: green;
+}
+.chat-box{
+    position: relative;
+    width: 100%;
+    height: calc(100% - 120px);   /*  60 + 60 =120 */
+    padding: 50px;
+    overflow: auto;
+}
+.message{
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin: 20px 0;
+}
+.message p{
+    position: relative;
+    right: 0;
+    text-align: right;
+    max-width: 65%;
+    padding: 12px;
+    background: #dcf8c6;
+    border-radius: 10px;
+    font-size: 0.9em;
+
+}
+.message p::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -12px;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #dcf8c6 0%, #dcf8c6 50%, transparent 50%, transparent);
+}
+.message p span{
+    display: block;
+    margin-top: 5px;
+    font-size: 0.7em;
+    opacity: 0.5;
+}
+.my-message{
+    justify-content: flex-end;
+}
+.friend-message{
+    justify-content: flex-start;
+}
+.friend-message p{
+    background: white;
+    text-align: left;
+}
+.message .friend-message p::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -12px;
+        width: 20px;
+        height: 20px;
+        background: linear-gradient(225deg, #fff 0%, #fff 50%, transparent 50%, transparent);
+}
+.chatbox-input{
+    position: relative;
+    width: 100%;
+    height: 60px;
+    background: #f0f0f0;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.chatbox-input ion-icon{
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: #51585c;
+}
+.chatbox-input ion-icon:nth-child(1){
+    margin-right: 15px;
+}
+.chatbox-input input{
+    position: relative;
+    width: 90%;
+    margin: 0 20px;
+    padding: 10px 20px ;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+}
